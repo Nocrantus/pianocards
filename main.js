@@ -44,9 +44,13 @@ function nextCard() {
     setTimeout(showCard, 200);
 }
 
-    let startTime = Date.now();
+function toggleTimer() {
+    document.getElementById("timer").classList.toggle("not-displayed");
+}
 
-    // Update the count down every 1 second
+let startTime = Date.now();
+
+    // Update the count-down every 1 second
 let x = setInterval(function() {
 
     // Get today's date and time
@@ -61,9 +65,10 @@ let x = setInterval(function() {
     // Display the result in the element with id="demo"
     document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
 
-    // If the count down is finished, write some text
+    // If the count-down is finished, write some text
     if (distance < 0) {
     clearInterval(x);
+    window.alert('Time is up!');
     document.getElementById("timer").innerHTML = "EXPIRED";
 }
 }, 1000);
