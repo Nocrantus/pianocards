@@ -19,9 +19,11 @@ let index = 0;
 
 window.onload = function () {
     index = 0;
+    start = 0;
     showCard();
     document.getElementById("flashcard-viewer").style.display = "block";
 }
+
 
 function showCard() {
     const card = flashcards[index];
@@ -35,7 +37,33 @@ function flipCard() {
 }
 
 function nextCard() {
+    document.getElementById("card-back").textContent = '';
+    document.getElementById("flashcard-inner").classList.remove("flipped");
     index = Math.floor(Math.random()*12);
-    showCard();
-
+    document.getElementById("card-front").src = flashcards[index].img;
+    setTimeout(showCard, 200);
 }
+
+    let startTime = Date.now();
+
+    // Update the count down every 1 second
+let x = setInterval(function() {
+
+    // Get today's date and time
+    let now = Date.now();
+
+    let distance = 302000 + startTime - now;
+
+    // Time calculations for days, hours, minutes and seconds
+    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display the result in the element with id="demo"
+    document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
+
+    // If the count down is finished, write some text
+    if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+}
+}, 1000);
