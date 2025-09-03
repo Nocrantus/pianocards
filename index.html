@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Pianoflash</title>
@@ -7,20 +7,37 @@
 </head>
 <body>
 <script type = "text/javascript" src = "main.js"></script>
+<div id="options">
+    <label for="clef-options">Select a clef:</label>
+    <select id="clef-options">
+        <option value = "treble">Treble</option>
+        <option value = "bass">Bass</option>
+    </select>
+    <br>
+    <label for="note-options">Select note options:</label>
+    <select id="note-options">
+        <option value = "both">Both</option>
+        <option value = "lines">Lines</option>
+        <option value = "spaces">Spaces</option>
+    </select>
+</div>
 
 <div class="flashcard-section">
     <div class="flashcard-viewer" id="flashcard-viewer">
-        <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="flashcard not-displayed" id="flashcard" onclick="flipCard()">
             <div class="flashcard-inner" id="flashcard-inner">
-                <img src="" class="flashcard-front" id="card-front" style="width:300px; height:300px">
+                <img src="" class="flashcard-front" id="card-front" style="width:300px; height:300px" alt="">
                 <div class="flashcard-back" id="card-back"></div>
             </div>
         </div>
         <!--Buttons-->
-        <div class="buttons">
+        <div id = "startButton" class = "buttons">
+            <button onclick="start()">Start</button>
+        </div>
+        <div id = "nextButton" class = "buttons not-displayed">
             <button onclick="nextCard()">Next Card</button>
         </div>
-        <div class="buttons">
+        <div id = "timerButton" class = "buttons not-displayed" >
             <button onclick="toggleTimer()">Toggle Timer</button>
         </div>
         <p id="timer"></p>
