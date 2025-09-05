@@ -67,18 +67,20 @@ function nextCard() {
     document.getElementById("card-back").textContent = '';
     document.getElementById("flashcard-inner").classList.remove("flipped");
 
-    let newIndex = Math.floor(Math.random()*flashcards.length);
-    if (newIndex === index){
-        if (newIndex === flashcards.length) {
-            index = flashcards.length - 1;
-        }
-        else if(newIndex === 0){
-            index = 1;
-        }
-    }
+    index = generateNewIndex();
 
     document.getElementById("card-front").src = flashcards[index].img;
     setTimeout(showCard, 200);
+}
+
+function generateNewIndex() {
+    let newIndex = Math.floor(Math.random()*flashcards.length);
+    if (newIndex === index){
+        return generateNewIndex();
+    }
+    else{
+        return newIndex;
+    }
 }
 
 function toggleTimer() {
@@ -111,7 +113,6 @@ function hideEverything(){
 function selectFlashcardSet(){
     let clefIndex = document.getElementById("clef-options").selectedIndex;
     let noteIndex = document.getElementById("note-options").selectedIndex;
-    window.alert(clefIndex);
     //Clef: 0 = Treble, 1 = Bass
     //Notes: 0 = Both, 1 = Lines, 2 = Spaces
     if (clefIndex === 0) {
