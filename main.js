@@ -1,28 +1,31 @@
-const TLowerC = {img:'images/TLowerC.png', note:'C'};
-const TLowerD = {img:'images/TLowerD.png', note:'D'};
-const TLowerE = {img:'images/TLowerE.png', note:'E'};
-const TLowerF = {img:'images/TLowerF.png', note:'F'};
-const TLowerG = {img:'images/TLowerG.png', note:'G'};
-const TLowerA = {img:'images/TLowerA.png', note:'A'};
-const TUpperB = {img:'images/TUpperB.png', note:'B'};
-const TUpperC = {img:'images/TUpperC.png', note:'C'};
-const TUpperD = {img:'images/TUpperD.png', note:'D'};
-const TUpperE = {img:'images/TUpperE.png', note:'E'};
-const TUpperF = {img:'images/TUpperF.png', note:'F'};
-const TUpperG = {img:'images/TUpperG.png', note:'G'};
+const TLowerC = {img:'images/Treble/TLowerC.png', note:'C'};
+const TLowerD = {img:'images/Treble/TLowerD.png', note:'D'};
+const TLowerE = {img:'images/Treble/TLowerE.png', note:'E'};
+const TLowerF = {img:'images/Treble/TLowerF.png', note:'F'};
+const TLowerG = {img:'images/Treble/TLowerG.png', note:'G'};
+const TLowerA = {img:'images/Treble/TLowerA.png', note:'A'};
 
-const BLowerC = {img:'images/BLowerC.png', note:'C'};
-const BLowerD = {img:'images/BLowerD.png', note:'D'};
-const BLowerE = {img:'images/BLowerE.png', note:'E'};
-const BLowerF = {img:'images/BLowerF.png', note:'F'};
-const BLowerG = {img:'images/BLowerG.png', note:'G'};
-const BLowerA = {img:'images/BLowerA.png', note:'A'};
-const BUpperB = {img:'images/BUpperB.png', note:'B'};
-const BUpperC = {img:'images/BUpperC.png', note:'C'};
-const BUpperD = {img:'images/BUpperD.png', note:'D'};
-const BUpperE = {img:'images/BUpperE.png', note:'E'};
-const BUpperF = {img:'images/BUpperF.png', note:'F'};
-const BUpperG = {img:'images/BUpperG.png', note:'G'};
+const TUpperB = {img:'images/Treble/TUpperB.png', note:'B'};
+const TUpperC = {img:'images/Treble/TUpperC.png', note:'C'};
+const TUpperD = {img:'images/Treble/TUpperD.png', note:'D'};
+const TUpperE = {img:'images/Treble/TUpperE.png', note:'E'};
+const TUpperF = {img:'images/Treble/TUpperF.png', note:'F'};
+const TUpperG = {img:'images/Treble/TUpperG.png', note:'G'};
+
+const BLowerF = {img:'images/Bass/BLowerF.png', note:'F'};
+const BLowerG = {img:'images/Bass/BLowerG.png', note:'G'};
+const BLowerA = {img:'images/Bass/BLowerA.png', note:'A'};
+const BLowerB = {img:'images/Bass/BLowerB.png', note:'B'};
+const BLowerC = {img:'images/Bass/BLowerC.png', note:'C'};
+
+const BUpperD = {img:'images/Bass/BUpperD.png', note:'D'};
+const BUpperE = {img:'images/Bass/BUpperE.png', note:'E'};
+const BUpperF = {img:'images/Bass/BUpperF.png', note:'F'};
+const BUpperG = {img:'images/Bass/BUpperG.png', note:'G'};
+const BUpperA = {img:'images/Bass/BUpperA.png', note:'A'};
+const BUpperB = {img:'images/Bass/BUpperB.png', note:'B'};
+const BUpperC = {img:'images/Bass/BUpperC.png', note:'C'};
+
 
 let trebleBoth =
     [TLowerC, TLowerD, TLowerE, TLowerF, TLowerG, TLowerA,
@@ -31,6 +34,17 @@ let trebleLines =
     [TLowerC, TLowerE, TLowerG, TUpperB, TUpperD, TUpperF];
 let trebleSpaces =
     [TLowerD, TLowerF, TLowerA, TUpperC, TUpperE, TUpperG];
+
+let bassBoth =
+    [BLowerF, BLowerG, BLowerA, BLowerB, BLowerC, BUpperD,
+    BUpperE, BUpperF, BUpperG, BUpperA, BUpperB, BUpperC];
+
+let bassLines =
+    [BLowerG, BLowerB, BUpperD, BUpperF, BUpperA, BUpperC];
+
+let bassSpaces =
+    [BLowerF, BLowerA, BLowerC, BUpperE, BUpperG, BUpperB]
+
 
 let flashcards = [];
 
@@ -113,13 +127,13 @@ function selectFlashcardSet(){
     }
     else{
         if (noteIndex === 0) {
-            flashcards = BassBoth;
+            flashcards = bassBoth;
         }
         if (noteIndex === 1) {
-            flashcards = BassLines;
+            flashcards = bassLines;
         }
         if (noteIndex === 2) {
-            flashcards = BassSpaces;
+            flashcards = bassSpaces;
         }
     }
 }
